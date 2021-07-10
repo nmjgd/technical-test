@@ -2,11 +2,8 @@ package com.example.technicaltest.service;
 
 import java.math.BigDecimal;
 
-import org.springframework.stereotype.Service;
-
 import lombok.Data;
 
-@Service
 public interface ImageAnalysisService {
 
     AnalysisResultDto analyze(AnalysisDto dto);
