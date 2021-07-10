@@ -9,7 +9,7 @@
 ├── docker
 │  ├── db
 │  │   └── initdb.d        // DB初期化スクリプトフォルダ
-│  └── mockapi             // モックAPI設定フォルダ
+│  └── mockapi             // Mock API設定フォルダ
 │
 └── docker-compose.yml
 ```
