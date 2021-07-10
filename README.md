@@ -1,7 +1,9 @@
 # 技術テスト成果物
 
 ## 作成プログラムについて
-Webアプリでなく、Javaアプリケーションとして作成しております。
+
+- 言語はJavaを選択させて頂きました。
+- Webアプリでなく、Javaアプリケーションとして作成しております。
 
 ## フォルダ構成
 
@@ -21,14 +23,11 @@ Webアプリでなく、Javaアプリケーションとして作成しており�
 
 ### 利用アーキテクチャ
 
-- 言語
-  - Java
-- フレームワーク・ライブラリ・ソフトウェア
-  - SpringBoot
-  - JOOQ
-  - Lombok
-  - WireMock
-  - Docker
+- SpringBoot
+- JOOQ
+- Lombok
+- WireMock
+- Docker
 
 ### Docker を利用した環境
 
