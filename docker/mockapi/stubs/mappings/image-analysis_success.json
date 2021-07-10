@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/images/analyses",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.image_path =~ /^.*\\/?analyzable.jpg$/)]"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "image-analysis_success.json"
+  }
+}

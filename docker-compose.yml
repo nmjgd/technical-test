@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  client:
+    container_name: technical-test-client
+    image: adoptopenjdk/openjdk11:debian
+    tty: true
+    volumes:
+      - ./client:/usr/client:cached
+    networks:
+      - technical-test
+
+  db:
+    container_name: technical-test-db
+    image: mysql:8.0.25
+    volumes:
+      - ./docker/db/initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - technical-test
+
+  example.com:
+    container_name: technical-test-mockapi
+    image: rodolpheche/wiremock:2.29.0-alpine
+    command: '--port 80'
+    tty: true
+    volumes:
+      - ./docker/mockapi/stubs:/home/wiremock:cached
+    networks:
+      - technical-test
+
+  dbadmin:
+    depends_on:
+     - db
+    container_name: technical-test-dbadmin
+    image: phpmyadmin/phpmyadmin:5.1.1
+    ports:
+     - '8080:80'
+    environment:
+      PMA_HOST: db
+    networks:
+      - technical-test
+
+networks:
+  technical-test:
+    name: technical-test
+    driver: bridge
